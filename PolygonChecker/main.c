@@ -3,18 +3,19 @@
 
 #include "main.h"
 #include "triangleSolver.h"
+#include "vector.h"
 
 int side = 0;
 
 int main() {
+
 	bool continueProgram = true;
 	while (continueProgram) {
 		printWelcome();
 
 		int shapeChoice = printShapeMenu();
 
-		switch (shapeChoice)
-		{
+		switch (shapeChoice) {
 		case 1:
 			printf_s("Triangle selected.\n");
 			int triangleSides[3] = { 0, 0, 0 };
@@ -22,6 +23,11 @@ int main() {
 			//printf_s("! %d\n", triangleSidesPtr[0]);
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
+
+			float angles[3] = {-1, -1, -1};
+			GetAnglesFromSides(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2], angles);
+			printf("The angles of the triangle are: %f, %f, %f\n", angles[0], angles[1], angles[2]);
+
 			break;
 		case 0:
 			continueProgram = false;
