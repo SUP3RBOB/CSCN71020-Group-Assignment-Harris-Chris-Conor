@@ -25,9 +25,9 @@ namespace PolygonChekcerUnitTesting {
 
 		TEST_METHOD(RectangleTest) {
 			Vector2 v1 = { 0, 0 };
-			Vector2 v2 = { 0, 2 };
-			Vector2 v3 = { 2, 0 };
-			Vector2 v4 = { 2, 2 };
+			Vector2 v2 = { 0, 4 };
+			Vector2 v3 = { 4, 0 };
+			Vector2 v4 = { 4, 4 };
 
 			bool isRectangle = IsRectangle(v1, v2, v3, v4);
 

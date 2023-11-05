@@ -17,6 +17,6 @@ bool IsRectangle(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4) {
 	float corner3 = Distance(v3, center);
 	float corner4 = Distance(v4, center);
 
-	return corner1 == corner2 == corner3 == corner4;
+	return corner1 == corner2 && corner2 == corner3 && corner3 == corner4;
 }
 
