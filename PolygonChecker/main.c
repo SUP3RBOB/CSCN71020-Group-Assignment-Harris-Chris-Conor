@@ -32,6 +32,21 @@ int main() {
 		case 0:
 			continueProgram = false;
 			break;
+		case 2:
+			printf_s("Rectangle selected.\n");
+			Vector2 vectors[4];
+			float x, y;
+			for (int i = 0; i < 4; i++) {
+				printf_s("Please enter x: ");
+				scanf_s("%lf", &x);
+				printf_s("Please enter y: ");
+				scanf_s("%lf", &y);
+				vectors[i] = setVector(&x, &y);
+			}
+			if (IsRectangle(vectors[1], vectors[2], vectors[3], vectors[4])) {
+				printf("it is a rectangle");
+			}
+				break;
 		default:
 			printf_s("Invalid value entered.\n");
 			break;
@@ -49,6 +64,7 @@ void printWelcome() {
 }
 
 int printShapeMenu() {
+	printf_s("2. Rectangle\n");
 	printf_s("1. Triangle\n");
 	printf_s("0. Exit\n");
 
@@ -67,4 +83,11 @@ int* getTriangleSides(int* triangleSides) {
 		scanf_s("%d", &triangleSides[i]);
 	}
 	return triangleSides;
+}
+
+Vector2 setVector(float* x, float* y) {
+	Vector2 v = { 0 };
+	v.x = *x;
+	v.y = *y;
+	return v;
 }
