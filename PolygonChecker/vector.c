@@ -20,3 +20,12 @@ bool IsRectangle(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4) {
 	return corner1 == corner2 && corner2 == corner3 && corner3 == corner4;
 }
 
+float GetPerimeter(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4) {
+	float s1 = Distance(v1, v2);
+	float s2 = Distance(v2, v3);
+	float s3 = Distance(v3, v4);
+	float s4 = Distance(v4, v1);
+
+	return s1 + s2 + s3 + s4;
+}
+
