@@ -26,17 +26,13 @@ char* analyzeTriangle(int side1, int side2, int side3) {
 }
 
 void GetAnglesFromSides(int side1, int side2, int side3, float buffer[]) {
-	float pi = 4.f * atanf(1.f);
-	float s = (side1 + side2 + side3) / 2.f;
-	float area = sqrtf(s * (s - side1) * (s - side2) * (s - side3));
 
-	float r = (side1 * side2 * side3) / (4.f * area);
-	
-	float angle1 = (180.f / pi) * asinf(side1 / (2.f * r));
-	float angle2 = (180.f / pi) * asinf(side2 / (2.f * r));
-	float angle3 = (180.f / pi) * asinf(side3 / (2.f * r));
+	float angle1 = acosf((((side1 * side1) + (side2 * side2) - (side3 * side3)) / (2 * (side1 * side2))));
+	float angle2 = acosf((((side1 * side1) + (side3 * side3) - (side2 * side2)) / (2 * (side1 * side3))));
+	float angle3 = acosf((((side3 * side3) + (side2 * side2) - (side1 * side1)) / (2 * (side3 * side2))));
 
 	buffer[0] = angle1;
 	buffer[1] = angle2;
 	buffer[2] = angle3;
+
 }

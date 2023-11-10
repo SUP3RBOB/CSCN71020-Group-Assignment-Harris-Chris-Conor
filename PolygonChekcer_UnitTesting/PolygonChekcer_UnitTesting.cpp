@@ -8,7 +8,7 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 extern "C" typedef struct { float x; float y; } Vector2;
 extern "C" float Distance(Vector2 start, Vector2 end);
 extern "C" bool IsRectangle(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4);
-extern "C" float GetRectangleArea(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4);
+extern "C" float GetRectangleArea(float side1, float side2);
 extern "C" float GetPerimeter(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4);
 extern "C" char* analyzeTriangle(int side1, int side2, int side3);
 extern "C" void GetAnglesFromSides(int side1, int side2, int side3, float buffer[]);
@@ -192,6 +192,17 @@ namespace PolygonChekcerUnitTesting {
 
 			Assert::AreEqual("Not a triangle", result);
 		}
+
+		//
+		TEST_METHOD(GetAngleFromSides) {
+			int side1 = 5;
+			int side2 = 5;
+			int side3 = 4;
+			float buffer[3] = { 0 };
+
+			GetAnglesFromSides(side1, side2, side3, buffer[]);
+
+			Assert::AreEqual("", buffer[1]);
 
 	};
 }
