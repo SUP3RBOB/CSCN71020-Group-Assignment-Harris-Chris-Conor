@@ -4,7 +4,7 @@
 #include "main.h"
 #include "triangleSolver.h"
 #include "vector.h"
-
+#define RECTANGLE 4
 int side = 0;
 
 int main() {
@@ -34,18 +34,21 @@ int main() {
 			break;
 		case 2:
 			printf_s("Rectangle selected.\n");
-			Vector2 vectors[4];
+			Vector2 vectors[RECTANGLE] = { 0 };
 			float x, y;
-			for (int i = 0; i < 4; i++) {
+			for (int i = 0; i < RECTANGLE; i++) {
+				printf("\nFor vector %d\n", i + 1);
 				printf_s("Please enter x: ");
-				scanf_s("%lf", &x);
+				scanf_s("%f", &x);
 				printf_s("Please enter y: ");
-				scanf_s("%lf", &y);
-				vectors[i] = setVector(&x, &y);
+				scanf_s("%f", &y);
+				vectors[i] = setVector(x, y);
 			}
-			if (IsRectangle(vectors[1], vectors[2], vectors[3], vectors[4])) {
-				printf("it is a rectangle");
+			if (IsRectangle(vectors[0], vectors[1], vectors[2], vectors[3])) {
+				printf("it is a rectangle\n");
+				printf("The area is %f", GetRectangleArea(Distance(vectors[0], vectors[1]), Distance(vectors[2], vectors[3])));
 			}
+			printf("\nThe perimeter is %f\n", GetPerimeter(vectors[0], vectors[1], vectors[2], vectors[3]));
 				break;
 		default:
 			printf_s("Invalid value entered.\n");
@@ -85,9 +88,3 @@ int* getTriangleSides(int* triangleSides) {
 	return triangleSides;
 }
 
-Vector2 setVector(float* x, float* y) {
-	Vector2 v = { 0 };
-	v.x = *x;
-	v.y = *y;
-	return v;
-}

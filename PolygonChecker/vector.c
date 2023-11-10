@@ -20,10 +20,8 @@ bool IsRectangle(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4) {
 	return corner1 == corner2 && corner2 == corner3 && corner3 == corner4;
 }
 
-float GetRectangleArea(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4) {
-	float length = Distance(v1, v2);
-	float width = Distance(v2, v3);
-	return length * width;
+float GetRectangleArea(float side1, float side2) {
+	return side1 * side2;
 }
 
 float GetPerimeter(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4) {
@@ -35,3 +33,9 @@ float GetPerimeter(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4) {
 	return s1 + s2 + s3 + s4;
 }
 
+Vector2 setVector(float x, float y) {
+	Vector2 v = { 0 };
+	v.x = x;
+	v.y = y;
+	return v;
+}
