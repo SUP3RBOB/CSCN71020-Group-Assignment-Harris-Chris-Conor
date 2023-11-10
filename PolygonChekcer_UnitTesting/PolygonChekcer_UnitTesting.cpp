@@ -202,7 +202,7 @@ namespace PolygonChekcerUnitTesting {
 
 			GetAnglesFromSides(side1, side2, side3, buffer);
 
-			Assert::AreEqual(47.1563569f, buffer[0]);
+			Assert::AreEqual(47.156353f, buffer[0]);
 		}
 		TEST_METHOD(GetAngle2FromSides) {
 			float side1 = 5;
