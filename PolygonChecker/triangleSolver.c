@@ -25,12 +25,14 @@ char* analyzeTriangle(int side1, int side2, int side3) {
 	return result;
 }
 
-void GetAnglesFromSides(int side1, int side2, int side3, float buffer[]) {
+void GetAnglesFromSides(float side1, float side2, float side3, float buffer[]) {
 
 	float angle1 = acosf((((side1 * side1) + (side2 * side2) - (side3 * side3)) / (2 * (side1 * side2))));
 	float angle2 = acosf((((side1 * side1) + (side3 * side3) - (side2 * side2)) / (2 * (side1 * side3))));
 	float angle3 = acosf((((side3 * side3) + (side2 * side2) - (side1 * side1)) / (2 * (side3 * side2))));
-
+	angle1 = (angle1 * 180 ) / acos(-1);
+	angle2 = (angle2 * 180) / acos(-1);
+	angle3 = (angle3 * 180) / acos(-1);
 	buffer[0] = angle1;
 	buffer[1] = angle2;
 	buffer[2] = angle3;

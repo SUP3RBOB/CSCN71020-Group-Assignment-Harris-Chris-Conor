@@ -11,7 +11,7 @@ extern "C" bool IsRectangle(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4);
 extern "C" float GetRectangleArea(float side1, float side2);
 extern "C" float GetPerimeter(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4);
 extern "C" char* analyzeTriangle(int side1, int side2, int side3);
-extern "C" void GetAnglesFromSides(int side1, int side2, int side3, float buffer[]);
+extern "C" void GetAnglesFromSides(float side1, float side2, float side3, float buffer[]);
 
 namespace PolygonChekcerUnitTesting {
 	TEST_CLASS(PolygonChekcerUnitTesting) {
@@ -195,34 +195,34 @@ namespace PolygonChekcerUnitTesting {
 
 		//GetAnglesFromSides tests
 		TEST_METHOD(GetAngle1FromSides) {
-			int side1 = 5;
-			int side2 = 5;
-			int side3 = 4;
+			float side1 = 5;
+			float side2 = 5;
+			float side3 = 4;
 			float buffer[3] = { 0 };
 
-			GetAnglesFromSides(side1, side2, side3, &buffer[0]);
+			GetAnglesFromSides(side1, side2, side3, buffer);
 
-			Assert::AreEqual(47.15635696f, buffer[0]);
+			Assert::AreEqual(47.1563569f, buffer[0]);
 		}
 		TEST_METHOD(GetAngle2FromSides) {
-			int side1 = 5;
-			int side2 = 5;
-			int side3 = 4;
+			float side1 = 5;
+			float side2 = 5;
+			float side3 = 4;
 			float buffer[3] = { 0 };
 
-			GetAnglesFromSides(side1, side2, side3, &buffer[1]);
+			GetAnglesFromSides(side1, side2, side3, buffer);
 
-			Assert::AreEqual(66.42182152f, buffer[1]);
+			Assert::AreEqual(66.4218215f, buffer[1]);
 		}
 		TEST_METHOD(GetAngle3FromSides) {
-			int side1 = 5;
-			int side2 = 5;
-			int side3 = 4;
+			float side1 = 5;
+			float side2 = 5;
+			float side3 = 4;
 			float buffer[3] = { 0 };
 
-			GetAnglesFromSides(side1, side2, side3, &buffer[2]);
+			GetAnglesFromSides(side1, side2, side3, buffer);
 
-			Assert::AreEqual(66.42182152f, buffer[2]);
+			Assert::AreEqual(66.4218215f, buffer[2]);
 		}
 	};
 }
