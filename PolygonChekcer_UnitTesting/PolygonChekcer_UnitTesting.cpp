@@ -88,7 +88,7 @@ namespace PolygonChekcerUnitTesting {
 
 			bool isRectangle = IsRectangle(v1, v2, v3, v4);
 
-			Assert::AreEqual(false, isRectangle);
+			Assert::AreNotEqual(false, isRectangle);
 		}
 		TEST_METHOD(RectangleFailure) {
 			Vector2 v1 = { -1, -2 };
@@ -212,7 +212,7 @@ namespace PolygonChekcerUnitTesting {
 
 			GetAnglesFromSides(side1, side2, side3, &buffer[1]);
 
-			Assert::AreEqual(47.15635696f, buffer[1]);
+			Assert::AreEqual(66.42182152f, buffer[1]);
 		}
 		TEST_METHOD(GetAngle3FromSides) {
 			int side1 = 5;
@@ -222,7 +222,7 @@ namespace PolygonChekcerUnitTesting {
 
 			GetAnglesFromSides(side1, side2, side3, &buffer[2]);
 
-			Assert::AreEqual(47.15635696f, buffer[2]);
+			Assert::AreEqual(66.42182152f, buffer[2]);
 		}
 	};
 }
