@@ -99,7 +99,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>F:\Conestoga Computer Science\Software Implementation and Unit Testing\CSCN71020-Group-Assignment-Harris-Chris-Conor\PolygonChecker\x64\Debug;$(VCInstallDir)UnitTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\cljhu\source\repos\CSCN71020-Group-Assignment-Harris-Chris-Conor\PolygonChecker\x64\Debug;F:\Conestoga Computer Science\Software Implementation and Unit Testing\CSCN71020-Group-Assignment-Harris-Chris-Conor\PolygonChecker\x64\Debug;$(VCInstallDir)UnitTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>vector.obj;main.obj;triangleSolver.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
