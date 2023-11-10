@@ -128,7 +128,7 @@ namespace PolygonChekcerUnitTesting {
 			Vector2 v3 = { 4, 4 };
 			Vector2 v4 = { 0, 4 };
 
-			float area = GetRectangleArea(v1, v2, v3, v4);
+			float area = GetRectangleArea(Distance(v1, v2), Distance(v2, v3));
 
 			Assert::AreEqual(16.f, area);
 		}
@@ -138,7 +138,7 @@ namespace PolygonChekcerUnitTesting {
 			Vector2 v3 = { -1, -3 };
 			Vector2 v4 = { -3, -3 };
 
-			float area = GetRectangleArea(v1, v2, v3, v4);
+			float area = GetRectangleArea(Distance(v1, v2), Distance(v2, v3));
 
 			Assert::AreEqual(16.f, area);
 		}
@@ -193,16 +193,36 @@ namespace PolygonChekcerUnitTesting {
 			Assert::AreEqual("Not a triangle", result);
 		}
 
-		//
-		TEST_METHOD(GetAngleFromSides) {
+		//GetAnglesFromSides tests
+		TEST_METHOD(GetAngle1FromSides) {
 			int side1 = 5;
 			int side2 = 5;
 			int side3 = 4;
 			float buffer[3] = { 0 };
 
-			GetAnglesFromSides(side1, side2, side3, buffer[]);
+			GetAnglesFromSides(side1, side2, side3, &buffer[0]);
 
-			Assert::AreEqual("", buffer[1]);
+			Assert::AreEqual(47.15635696f, buffer[0]);
+		}
+		TEST_METHOD(GetAngle2FromSides) {
+			int side1 = 5;
+			int side2 = 5;
+			int side3 = 4;
+			float buffer[3] = { 0 };
 
+			GetAnglesFromSides(side1, side2, side3, &buffer[1]);
+
+			Assert::AreEqual(47.15635696f, buffer[1]);
+		}
+		TEST_METHOD(GetAngle3FromSides) {
+			int side1 = 5;
+			int side2 = 5;
+			int side3 = 4;
+			float buffer[3] = { 0 };
+
+			GetAnglesFromSides(side1, side2, side3, &buffer[2]);
+
+			Assert::AreEqual(47.15635696f, buffer[2]);
+		}
 	};
 }
