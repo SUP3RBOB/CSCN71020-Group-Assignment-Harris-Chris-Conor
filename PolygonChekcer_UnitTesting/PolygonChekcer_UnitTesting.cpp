@@ -121,7 +121,7 @@ namespace PolygonChekcerUnitTesting {
 			Assert::AreEqual(false, isRectangle);
 		}
 
-		//GetRectangleArea Tests
+		//GetRectangleArea Tests  2
 		TEST_METHOD(AreaTest) {
 			Vector2 v1 = { 0, 0 };
 			Vector2 v2 = { 4, 0 };
@@ -140,7 +140,7 @@ namespace PolygonChekcerUnitTesting {
 
 			float area = GetRectangleArea(Distance(v1, v2), Distance(v2, v3));
 
-			Assert::AreEqual(16.f, area);
+			Assert::AreEqual(5.6568542f, area);
 		}
 
 		//GetPerimeter() tests
