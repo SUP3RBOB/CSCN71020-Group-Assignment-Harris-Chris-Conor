@@ -8,6 +8,8 @@ float Distance(Vector2 start, Vector2 end) {
 }
 
 bool IsRectangle(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4) {
+	if (AreEqual(v1, v2) == true && AreEqual(v2, v3) == true && AreEqual(v3, v4))
+		return false;
 	Vector2 center;
 	center.x = (v1.x + v2.x + v3.x + v4.x) / 4.f;
 	center.y = (v1.y + v2.y + v3.y + v4.y) / 4.f;
@@ -38,4 +40,11 @@ Vector2 setVector(float x, float y) {
 	v.x = x;
 	v.y = y;
 	return v;
+}
+
+bool AreEqual(Vector2 v1, Vector2 v2) {
+	if (v1.x == v2.x && v1.y == v2.y)
+		return true;
+	
+	return false;
 }

@@ -53,6 +53,9 @@ int main() {
 				printf("it is a rectangle\n");
 				printf("The area is %f", GetRectangleArea(Distance(vectors[0], vectors[1]), Distance(vectors[2], vectors[3])));
 			}
+			else
+				printf("\nit is not a rectangle");
+
 			printf("\nThe perimeter is %f\n", GetPerimeter(vectors[0], vectors[1], vectors[2], vectors[3]));
 				break;
 		default:
