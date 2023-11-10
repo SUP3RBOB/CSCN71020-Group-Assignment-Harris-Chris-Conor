@@ -154,7 +154,28 @@ namespace PolygonChekcerUnitTesting {
 
 			Assert::AreEqual(16.f, perimeter);
 		}
+		/*
+		TEST_METHOD(PerimeterTest) {
+			Vector2 v1 = { 0, 0 };
+			Vector2 v2 = { 4, 0 };
+			Vector2 v3 = { 4, 4 };
+			Vector2 v4 = { 0, 4 };
 
+			float perimeter = GetPerimeter(v1, v2, v3, v4);
+
+			Assert::AreEqual(16.f, perimeter);
+		}
+		TEST_METHOD(PerimeterTest) {
+			Vector2 v1 = { 0, 0 };
+			Vector2 v2 = { 4, 0 };
+			Vector2 v3 = { 4, 4 };
+			Vector2 v4 = { 0, 4 };
+
+			float perimeter = GetPerimeter(v1, v2, v3, v4);
+
+			Assert::AreEqual(16.f, perimeter);
+		}
+		*/
 		//analyzeTriangle() tests
 		TEST_METHOD(AnalyzeTriangle) {
 			int side1 = 5;
@@ -194,7 +215,7 @@ namespace PolygonChekcerUnitTesting {
 		}
 
 		//GetAnglesFromSides tests
-		TEST_METHOD(GetAngle1FromSides) {
+		TEST_METHOD(isoGetAngle1FromSides) {
 			float side1 = 5;
 			float side2 = 5;
 			float side3 = 4;
@@ -204,7 +225,7 @@ namespace PolygonChekcerUnitTesting {
 
 			Assert::AreEqual(47.156353f, buffer[0]);
 		}
-		TEST_METHOD(GetAngle2FromSides) {
+		TEST_METHOD(isoGetAngle2FromSides) {
 			float side1 = 5;
 			float side2 = 5;
 			float side3 = 4;
@@ -214,7 +235,7 @@ namespace PolygonChekcerUnitTesting {
 
 			Assert::AreEqual(66.4218215f, buffer[1]);
 		}
-		TEST_METHOD(GetAngle3FromSides) {
+		TEST_METHOD(isoGetAngle3FromSides) {
 			float side1 = 5;
 			float side2 = 5;
 			float side3 = 4;
@@ -223,6 +244,66 @@ namespace PolygonChekcerUnitTesting {
 			GetAnglesFromSides(side1, side2, side3, buffer);
 
 			Assert::AreEqual(66.4218215f, buffer[2]);
+		}
+		TEST_METHOD(scaGetAngle1FromSides) {
+			float side1 = 5;
+			float side2 = 3;
+			float side3 = 4;
+			float buffer[3] = { 0 };
+
+			GetAnglesFromSides(side1, side2, side3, buffer);
+
+			Assert::AreEqual(53.130100f, buffer[0]);
+		}
+		TEST_METHOD(scaGetAngle2FromSides) {
+			float side1 = 5;
+			float side2 = 3;
+			float side3 = 4;
+			float buffer[3] = { 0 };
+
+			GetAnglesFromSides(side1, side2, side3, buffer);
+
+			Assert::AreEqual(36.869896f, buffer[1]);
+		}
+		TEST_METHOD(scaGetAngle3FromSides) {
+			float side1 = 5;
+			float side2 = 3;
+			float side3 = 4;
+			float buffer[3] = { 0 };
+
+			GetAnglesFromSides(side1, side2, side3, buffer);
+
+			Assert::AreEqual(90.f, buffer[2]);
+		}
+		TEST_METHOD(equGetAngle1FromSides) {
+			float side1 = 5;
+			float side2 = 5;
+			float side3 = 5;
+			float buffer[3] = { 0 };
+
+			GetAnglesFromSides(side1, side2, side3, buffer);
+
+			Assert::AreEqual(60.f, buffer[0]);
+		}
+		TEST_METHOD(equGetAngle2FromSides) {
+			float side1 = 5;
+			float side2 = 5;
+			float side3 = 5;
+			float buffer[3] = { 0 };
+
+			GetAnglesFromSides(side1, side2, side3, buffer);
+
+			Assert::AreEqual(60.f, buffer[1]);
+		}
+		TEST_METHOD(equGetAngle3FromSides) {
+			float side1 = 5;
+			float side2 = 5;
+			float side3 = 5;
+			float buffer[3] = { 0 };
+
+			GetAnglesFromSides(side1, side2, side3, buffer);
+
+			Assert::AreEqual(60.f, buffer[2]);
 		}
 	};
 }
