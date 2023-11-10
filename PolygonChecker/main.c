@@ -41,9 +41,12 @@ int main() {
 				printf_s("Please enter x: ");
 				if (scanf_s("%f", &x) != 1)
 					x = 0;
+
+				while (getchar() != '\n');
 				printf_s("Please enter y: ");
 				if (scanf_s("%f", &y) != 1)
 					y = 0;
+				while (getchar() != '\n');
 				vectors[i] = setVector(x, y);
 			}
 			if (IsRectangle(vectors[0], vectors[1], vectors[2], vectors[3])) {
