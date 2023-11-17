@@ -134,7 +134,7 @@ namespace Vectorunittests
 
 			Assert::AreEqual(16.f, area);
 		}
-		TEST_METHOD(NegativaArea) {
+		TEST_METHOD(NegativeVectorsArea) {
 			Vector2 v1 = { -1, -1 };
 			Vector2 v2 = { -3, -1 };
 			Vector2 v3 = { -1, -3 };
@@ -143,6 +143,12 @@ namespace Vectorunittests
 			float area = GetRectangleArea(Distance(v1, v2), Distance(v2, v3));
 
 			Assert::AreEqual(5.6568542f, area);
+		}
+		TEST_METHOD(NegativaArea) {
+		
+			float area = GetRectangleArea(-80, 40);
+
+			Assert::AreNotEqual(-3200.0f, area);
 		}
 
 		//GetPerimeter() tests
@@ -214,12 +220,26 @@ namespace Vectorunittests
 			Vector2 b = SetVector(x, y);
 			Assert::AreNotEqual(a.x, b.x);
 		}
-		TEST_METHOD(notequaly_SetVector) {
+		TEST_METHOD(notequal_y_SetVector) {
 			float x = -4.0, y = 3.0;
 			Vector2 a = { 0 };
 			a.x = -4.0, a.y = 4.0;
 			Vector2 b = SetVector(x, y);
 			Assert::AreNotEqual(a.y, b.y);
+		}
+		TEST_METHOD(both_x_SetVector) {
+			float x = -4.0, y = 3.0;
+			float l = -4.0, m = 3.0;
+			Vector2 b = SetVector(x, y);
+			Vector2 a = SetVector(l, m);
+			Assert::AreEqual(a.x, b.x);
+		}
+		TEST_METHOD(both_y_SetVector) {
+			float x = -4.0, y = 6.0;
+			float l = -4.0, m = 6.0;
+			Vector2 b = SetVector(x, y);
+			Vector2 a = SetVector(l, m);
+			Assert::AreEqual(a.y, b.y);
 		}
 
 		// VectorAreEqual tests		Connor
