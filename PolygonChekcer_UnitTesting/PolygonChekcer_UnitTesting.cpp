@@ -12,6 +12,8 @@ extern "C" float GetRectangleArea(float side1, float side2);
 extern "C" float GetPerimeter(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4);
 extern "C" char* analyzeTriangle(int side1, int side2, int side3);
 extern "C" void GetAnglesFromSides(float side1, float side2, float side3, float buffer[]);
+extern "C" Vector2 SetVector(float x, float y);
+extern "C" bool VectorAreEqual(Vector2 v1, Vector2 v2);
 
 namespace PolygonChekcerUnitTesting {
 	TEST_CLASS(PolygonChekcerUnitTesting) {
@@ -304,6 +306,64 @@ namespace PolygonChekcerUnitTesting {
 			GetAnglesFromSides(side1, side2, side3, buffer);
 
 			Assert::AreEqual(60.f, buffer[2]);
+		}
+
+		// SetVector tests
+		TEST_METHOD(equalx_SetVector) {
+			float x = 1.0, y = 1.0;
+			Vector2 a = { 0 };
+			a.x = 1.0, a.y = 1.0;
+			Vector2 b = SetVector(x, y);
+			Assert::AreEqual(a.x, b.x);
+		}
+		TEST_METHOD(equaly_SetVector) {
+			float x = 1.0, y = 1.0;
+			Vector2 a = { 0 };
+			a.x = 1.0, a.y = 1.0;
+			Vector2 b = SetVector(x, y);
+			Assert::AreEqual(a.y, b.y);
+		}
+		TEST_METHOD(negativex_SetVector) {
+			float x = -4.0, y = 3.0;
+			Vector2 a = { 0 };
+			a.x = -4.0, a.y = 3.0;
+			Vector2 b = SetVector(x, y);
+			Assert::AreEqual(a.x, b.x);
+		}
+		TEST_METHOD(negativey_SetVector) {
+			float x = 4.0, y = -3.0;
+			Vector2 a = { 0 };
+			a.x = 4.0, a.y = -3.0;
+			Vector2 b = SetVector(x, y);
+			Assert::AreEqual(a.x, b.x);
+		}
+		TEST_METHOD(notequalx_SetVector) {
+			float x = -9.0, y = 3.0;
+			Vector2 a = { 0 };
+			a.x = -4.0, a.y = 3.0;
+			Vector2 b = SetVector(x, y);
+			Assert::AreNotEqual(a.x, b.x);
+		}
+		TEST_METHOD(notequaly_SetVector) {
+			float x = -4.0, y = 3.0;
+			Vector2 a = { 0 };
+			a.x = -4.0, a.y = 4.0;
+			Vector2 b = SetVector(x, y);
+			Assert::AreNotEqual(a.y, b.y);
+		}
+
+		// VectorAreEqual tests
+		TEST_METHOD(equal_VectorAreEqual) {
+			float x = -4.0, y = 3.0, k = -4.0, l = 3.0;
+			Vector2 a = { 0 }, b = { 0 };
+			a.x = x, a.y = y, b.x = k, b.y = l;
+			Assert::AreEqual(true, VectorAreEqual(a, b));
+		}
+		TEST_METHOD(notequal_VectorAreEqual) {
+			float x = -4.0, y = 70.0, k = -4.0, l = 3.0;
+			Vector2 a = { 0 }, b = { 0 };
+			a.x = x, a.y = y, b.x = k, b.y = l;
+			Assert::AreNotEqual(true, VectorAreEqual(a, b));
 		}
 	};
 }

@@ -47,7 +47,7 @@ int main() {
 				if (scanf_s("%f", &y) != 1)
 					y = 0;
 				while (getchar() != '\n');
-				vectors[i] = setVector(x, y);
+				vectors[i] = SetVector(x, y);
 			}
 			if (IsRectangle(vectors[0], vectors[1], vectors[2], vectors[3])) {
 				printf("it is a rectangle\n");
