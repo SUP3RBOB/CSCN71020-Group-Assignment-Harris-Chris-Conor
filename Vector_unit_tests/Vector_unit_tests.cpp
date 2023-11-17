@@ -178,7 +178,7 @@ namespace Vectorunittests
 			Assert::AreEqual(16.f, perimeter);
 		}
 		*/
-		// SetVector tests
+		// SetVector tests	Connor
 		TEST_METHOD(equalx_SetVector) {
 			float x = 1.0, y = 1.0;
 			Vector2 a = { 0 };
@@ -222,7 +222,7 @@ namespace Vectorunittests
 			Assert::AreNotEqual(a.y, b.y);
 		}
 
-		// VectorAreEqual tests
+		// VectorAreEqual tests		Connor
 		TEST_METHOD(equal_VectorAreEqual) {
 			float x = -4.0, y = 3.0, k = -4.0, l = 3.0;
 			Vector2 a = { 0 }, b = { 0 };
