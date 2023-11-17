@@ -20,7 +20,7 @@ namespace Vectorunittests
 	public:
 		
 		//Distance() Tests
-		TEST_METHOD(DistanceTest) {
+		TEST_METHOD(DistanceTest) {	//harris
 			Vector2 center = { 1, 1 };
 			Vector2 v1 = { 0, 0 };
 			Vector2 v2 = { 0, 2 };
@@ -52,7 +52,7 @@ namespace Vectorunittests
 		}
 
 		//IsRectangle() Tests
-		TEST_METHOD(RectangleTest) {
+		TEST_METHOD(RectangleTest) {	//harris
 			Vector2 v1 = { 0, 0 };
 			Vector2 v2 = { 0, 4 };
 			Vector2 v3 = { 4, 0 };
@@ -124,7 +124,7 @@ namespace Vectorunittests
 		}
 
 		//GetRectangleArea Tests  2
-		TEST_METHOD(AreaTest) {
+		TEST_METHOD(AreaTest) {		//harris
 			Vector2 v1 = { 0, 0 };
 			Vector2 v2 = { 4, 0 };
 			Vector2 v3 = { 4, 4 };
@@ -146,7 +146,7 @@ namespace Vectorunittests
 		}
 
 		//GetPerimeter() tests
-		TEST_METHOD(PerimeterTest) {
+		TEST_METHOD(PerimeterTest) {	//harris
 			Vector2 v1 = { 0, 0 };
 			Vector2 v2 = { 4, 0 };
 			Vector2 v3 = { 4, 4 };
