@@ -144,6 +144,11 @@ namespace Vectorunittests
 
 			Assert::AreEqual(5.6568542f, area);
 		}
+		TEST_METHOD(ExtremeNumbers) {
+			float area = GetRectangleArea( -40, 80);
+
+			Assert::AreNotEqual(-3200.0f, area);
+		}
 
 		//GetPerimeter() tests
 		TEST_METHOD(PerimeterTest) {
@@ -179,47 +184,61 @@ namespace Vectorunittests
 		}
 		*/
 		// SetVector tests
-		TEST_METHOD(equalx_SetVector) {
+		TEST_METHOD(equal_x_SetVector) {
 			float x = 1.0, y = 1.0;
 			Vector2 a = { 0 };
 			a.x = 1.0, a.y = 1.0;
 			Vector2 b = SetVector(x, y);
 			Assert::AreEqual(a.x, b.x);
 		}
-		TEST_METHOD(equaly_SetVector) {
+		TEST_METHOD(equal_y_SetVector) {
 			float x = 1.0, y = 1.0;
 			Vector2 a = { 0 };
 			a.x = 1.0, a.y = 1.0;
 			Vector2 b = SetVector(x, y);
 			Assert::AreEqual(a.y, b.y);
 		}
-		TEST_METHOD(negativex_SetVector) {
+		TEST_METHOD(negative_x_SetVector) {
 			float x = -4.0, y = 3.0;
 			Vector2 a = { 0 };
 			a.x = -4.0, a.y = 3.0;
 			Vector2 b = SetVector(x, y);
 			Assert::AreEqual(a.x, b.x);
 		}
-		TEST_METHOD(negativey_SetVector) {
+		TEST_METHOD(negative_y_SetVector) {
 			float x = 4.0, y = -3.0;
 			Vector2 a = { 0 };
 			a.x = 4.0, a.y = -3.0;
 			Vector2 b = SetVector(x, y);
 			Assert::AreEqual(a.x, b.x);
 		}
-		TEST_METHOD(notequalx_SetVector) {
+		TEST_METHOD(not_equal_x_SetVector) {
 			float x = -9.0, y = 3.0;
 			Vector2 a = { 0 };
 			a.x = -4.0, a.y = 3.0;
 			Vector2 b = SetVector(x, y);
 			Assert::AreNotEqual(a.x, b.x);
 		}
-		TEST_METHOD(notequaly_SetVector) {
+		TEST_METHOD(not_equal_y_SetVector) {
 			float x = -4.0, y = 3.0;
 			Vector2 a = { 0 };
 			a.x = -4.0, a.y = 4.0;
 			Vector2 b = SetVector(x, y);
 			Assert::AreNotEqual(a.y, b.y);
+		}
+		TEST_METHOD(both_x_SetVector) {
+			float x = -4.0, y = 3.0;
+			float n = -4.0, m = 3.0;
+			Vector2 a = SetVector(n, m);
+			Vector2 b = SetVector(x, y);
+			Assert::AreEqual(a.x, b.x);
+		}
+		TEST_METHOD(both_y_SetVector) {
+			float x = -4.0, y = 26678.0;
+			float n = -4.0, m = 26678.0;
+			Vector2 a = SetVector(n, m);
+			Vector2 b = SetVector(x, y);
+			Assert::AreEqual(a.y, b.y);
 		}
 
 		// VectorAreEqual tests
