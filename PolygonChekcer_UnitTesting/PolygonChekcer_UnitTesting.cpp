@@ -10,10 +10,11 @@ extern "C" float Distance(Vector2 start, Vector2 end);
 extern "C" bool IsRectangle(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4);
 extern "C" float GetRectangleArea(float side1, float side2);
 extern "C" float GetPerimeter(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4);
-extern "C" char* analyzeTriangle(int side1, int side2, int side3);
-extern "C" void GetAnglesFromSides(float side1, float side2, float side3, float buffer[]);
 extern "C" Vector2 SetVector(float x, float y);
 extern "C" bool VectorAreEqual(Vector2 v1, Vector2 v2);
+
+extern "C" char* analyzeTriangle(int side1, int side2, int side3);
+extern "C" void GetAnglesFromSides(float side1, float side2, float side3, float buffer[]);
 
 namespace PolygonChekcerUnitTesting {
 	TEST_CLASS(PolygonChekcerUnitTesting) {
