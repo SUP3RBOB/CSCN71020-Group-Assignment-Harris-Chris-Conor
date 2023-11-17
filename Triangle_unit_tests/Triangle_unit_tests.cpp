@@ -15,7 +15,7 @@ namespace Triangleunittests
 	public:
 		
 		//analyzeTriangle() tests
-		TEST_METHOD(AnalyzeTriangle) {
+		TEST_METHOD(AnalyzeTriangle) {		// chris did all triangles
 			int side1 = 5;
 			int side2 = 5;
 			int side3 = 4;
