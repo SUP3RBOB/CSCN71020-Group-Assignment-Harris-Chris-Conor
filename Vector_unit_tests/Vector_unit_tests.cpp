@@ -162,28 +162,51 @@ namespace Vectorunittests
 
 			Assert::AreEqual(16.f, perimeter);
 		}
-		/*
-		TEST_METHOD(PerimeterTest) {
+		
+		TEST_METHOD(PerimeterNone) {	// Harris
 			Vector2 v1 = { 0, 0 };
-			Vector2 v2 = { 4, 0 };
-			Vector2 v3 = { 4, 4 };
-			Vector2 v4 = { 0, 4 };
+			Vector2 v2 = { 0, 0 };
+			Vector2 v3 = { 0, 0 };
+			Vector2 v4 = { 0, 0 };
 
 			float perimeter = GetPerimeter(v1, v2, v3, v4);
 
-			Assert::AreEqual(16.f, perimeter);
+			Assert::AreEqual(0.f, perimeter);
 		}
-		TEST_METHOD(PerimeterTest) {
-			Vector2 v1 = { 0, 0 };
-			Vector2 v2 = { 4, 0 };
-			Vector2 v3 = { 4, 4 };
-			Vector2 v4 = { 0, 4 };
+
+		TEST_METHOD(PerimeterRectangle) {	// Harris
+			Vector2 v1 = { -4, 2 };
+			Vector2 v2 = { 2, 2 };
+			Vector2 v3 = { 2, -1 };
+			Vector2 v4 = { -4, -1 };
 
 			float perimeter = GetPerimeter(v1, v2, v3, v4);
 
-			Assert::AreEqual(16.f, perimeter);
+			Assert::AreEqual(18.f, perimeter);
 		}
-		*/
+
+		TEST_METHOD(PerimeterTrapazoid) {	// Harris
+			Vector2 v1 = { -4, 2 };
+			Vector2 v2 = { 2, 2 };
+			Vector2 v3 = { 4, -1 };
+			Vector2 v4 = { -6, -1 };
+
+			float perimeter = GetPerimeter(v1, v2, v3, v4);
+
+			Assert::AreEqual(23.211102f, perimeter);
+		}
+
+		TEST_METHOD(PerimeterRandomShape) {	// Harris
+			Vector2 v1 = { -3.5f, 2 };
+			Vector2 v2 = { 1, 5 };
+			Vector2 v3 = { 4, -2 };
+			Vector2 v4 = { -2, -4 };
+
+			float perimeter = GetPerimeter(v1, v2, v3, v4);
+
+			Assert::AreEqual(25.533314f, perimeter);
+		}
+		
 		// SetVector tests	Connor
 		TEST_METHOD(equalx_SetVector) {
 			float x = 1.0, y = 1.0;
