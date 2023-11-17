@@ -23,7 +23,7 @@ bool IsRectangle(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4) {
 }
 
 float GetRectangleArea(float side1, float side2) {
-	return side1 * side2;
+	return abs(side1 * side2);
 }
 
 float GetPerimeter(Vector2 v1, Vector2 v2, Vector2 v3, Vector2 v4) {
